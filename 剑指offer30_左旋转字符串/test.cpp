@@ -6,6 +6,9 @@ using namespace std;
 class Solution {
 public:
 	string LeftRotateString(string str, int n) {
+		if (str.empty()){
+			return "";
+		}
 		auto str_size = str.size();
 		string temp1 = str.substr(0, str_size - n);
 		string temp2 = str.substr(str_size - n, n);
@@ -15,11 +18,11 @@ public:
 };
 
 void TestFunc(){
-	string test("hello world");
+	string test("abcdefg");
 	cout << "未旋转之前的字符串为：";
 	cout << test << " " << endl;
 	Solution s;
-	string test2 = s.LeftRotateString(test, 3);
+	string test2 = s.LeftRotateString(test, 2);
 	cout << "旋转之后的字符串为：";
 	cout << test2 << " " << endl;
 }
